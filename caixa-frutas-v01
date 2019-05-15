@@ -1,0 +1,70 @@
+print('*' * 20)
+print('Barraca de Frutas')
+print('*' * 20)
+print('1 = Maçã - Até 5 kg = R$ 1,80 por Kg ----- Acima de 5 kg = 1,50 por kg')
+print('2 = Morango - Até 5 kg = R$ 2,50 por Kg ----- Acima de 5 kg = 2,20 por kg')
+
+
+fruta = int(input('Esolha uma fruta: '))
+if fruta == 1:
+    fruta = 'Maçã'
+elif fruta == 2:
+    fruta = 'Morango'
+else:
+    print('Entrada invalida!')
+
+kilos = float(input('Quantos kilos? '))
+
+
+if fruta == 'Maçã':
+    if kilos < 6: 
+        kg = 1.80
+        resul = kilos * kg
+        print('{}kg de {} custarão R${:.2f}'.format(kilos, fruta, resul))
+    elif kilos >= 6:
+        if kilos < 8:   
+            kg = 1.50
+            resul = kilos * kg
+            print('{}Kg de {} custarão R${:.2f}'.format(kilos, fruta, resul))
+        elif kilos >= 8:
+            kg = 1.50
+            resul = kilos * kg
+            desconto = (resul * 5) / 100 #Caso a compra seja maior que 8kg, terá um desconto de 5% - - Faz o desconto
+            calc = resul - desconto
+            print('Como a sua compra ultrapassou os 8kg você ganhou um desconto de 5%')
+            print('{}Kg de {} custarão R${:.2f}'.format(kilos, fruta, calc))
+            print(desconto)
+        else:
+            print('ERRO 0')
+
+    else:
+        print('ERRO 1')
+
+if fruta == 'Morango':
+    if kilos < 6:
+        kg = 2.50
+        resul = kilos * kg
+        print('{}kg de {} custarão R${:.2f}'.format(kilos, fruta, resul))
+    elif kilos >= 6:
+        if kilos < 8:   
+            kg = 2.20
+            resul = kilos * kg
+            print('{}Kg de {} custarão R${:.2f}'.format(kilos, fruta, resul))
+        elif kilos >= 8:
+            kg = 2.20
+            resul = kilos * kg
+            desconto = (resul * 5) / 100 #Caso a compra seja maior que 8kg, terá um desconto de 5% - - Faz o desconto
+            calc = resul - desconto
+            print('Como a sua compra ultrapassou os 8kg você ganhou um desconto de 5%')
+            print('{}Kg de {} custarão R${:.2f}'.format(kilos, fruta, calc))
+            print(desconto)
+        else:
+            print('ERRO 2')
+
+    else:
+        print('ERRO 3')
+
+else:
+    print('ERRO 4')
+
+print('ERRO 5')
